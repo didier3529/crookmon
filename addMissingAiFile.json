@@ -1,0 +1,6 @@
+{
+  "featureFlags": {
+    "analyticsTracker": false,
+    "tipJar": false
+  }
+}
