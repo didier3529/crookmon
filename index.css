@@ -1,0 +1,165 @@
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #cccccc;
+  --bg-color: #f5f7fa;
+  --text-color: #333333;
+  --hp-bg: #e0e0e0;
+  --hp-filled: #76c7c0;
+  --attack-btn-bg: #ff5c5c;
+  --attack-btn-hover: #e04e4e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.selection-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.mascot-card {
+  background-color: #ffffff;
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+  padding: 10px;
+  width: 120px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.mascot-card.selected {
+  border-color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+.battle-field {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.mascot-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+}
+
+.mascot-name {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hp-bar {
+  width: 100%;
+  background-color: var(--hp-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 16px;
+  margin-bottom: 10px;
+}
+
+.hp-bar-inner {
+  height: 100%;
+  background-color: var(--hp-filled);
+  width: 100%;
+  transition: width 0.3s ease-in-out;
+}
+
+.attack-button {
+  background-color: var(--attack-btn-bg);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.attack-button:hover:enabled {
+  background-color: var(--attack-btn-hover);
+}
+
+.attack-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.log-container {
+  width: 100%;
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 10px;
+  height: 200px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.log-entry {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.win-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+.win-message {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.restart-button {
+  background-color: var(--attack-btn-bg);
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.restart-button:hover {
+  background-color: var(--attack-btn-hover);
+}
